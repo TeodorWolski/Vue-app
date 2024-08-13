@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const name = ref('Vue 3')
 const status = ref('active')
@@ -25,6 +25,20 @@ const addTask = () => {
 const removeTask = (id) => {
   tasks.value = tasks.value.filter((task) => task.id !== id)
 }
+
+onMounted(async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+    const data = await response.json()
+    tasks.value = data.map((task) => ({
+      id: task.id,
+      title: task.title,
+      isCompleted: task.completed
+    }))
+  } catch (error) {
+    console.error(error)
+  }
+})
 </script>
 
 <template>
