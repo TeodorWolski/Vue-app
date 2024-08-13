@@ -1,28 +1,16 @@
-<script>
-export default {
-  data() {
-    return {
-      name: 'Hello Vue 3',
-      status: 'active',
-      tasks: [
-        { id: 1, title: 'Task 1', isCompleted: true },
-        { id: 2, title: 'Task 2', isCompleted: false },
-        { id: 3, title: 'Task 3', isCompleted: true }
-      ],
-      link: 'https://www.google.com'
-    }
-  },
-  methods: {
-    changeStatus() {
-      if (this.status === 'active') {
-        this.status = 'pending'
-      } else if (this.status === 'pending') {
-        this.status = 'inactive'
-      } else {
-        this.status = 'active'
-      }
-    }
-  }
+<script setup>
+import { ref } from 'vue'
+
+const name = ref('Vue 3')
+const status = ref('active')
+const tasks = ref([
+  { id: 1, title: 'Task 1', isCompleted: true },
+  { id: 2, title: 'Task 2', isCompleted: false },
+  { id: 3, title: 'Task 3', isCompleted: true }
+])
+
+const changeStatus = () => {
+  status.value = status.value === 'active' ? 'inactive' : 'active'
 }
 </script>
 
@@ -37,6 +25,6 @@ export default {
       <span :class="{ 'is-completed': task.isCompleted }">{{ task.title }}</span>
     </li>
   </ul>
-  <a :href="link">Google</a>
+
   <button @click="changeStatus">Change Status</button>
 </template>
