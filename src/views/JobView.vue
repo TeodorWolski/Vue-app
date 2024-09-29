@@ -4,8 +4,11 @@ import axios from 'axios'
 import { reactive, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import BackButton from '@/components/BackButton.vue'
+import { useToast } from 'vue-toastification'
 
 const route = useRoute()
+const router = useRouter()
+const toast = useToast()
 const state = reactive({
   job: {
     id: '',
@@ -24,6 +27,19 @@ const state = reactive({
   loading: false
 })
 
+const deleteJob = async () => {
+  try {
+    const confirmDelete = window.confirm('Are you sure you want to delete this job?')
+    if (!confirmDelete) return
+    await axios.delete(`/api/jobs/${route.params.id}`)
+    toast.success('Job deleted successfully')
+    router.push('/jobs')
+  } catch (error) {
+    console.error('Error deleting job:', error)
+    toast.error('Error deleting job')
+  }
+}
+
 onMounted(async () => {
   try {
     state.loading = true
@@ -33,6 +49,7 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error fetching job:', error)
     state.loading = false
+    toast.error('Error fetching job')
   }
 })
 </script>

@@ -1,20 +1,6 @@
 {
   "jobs": [
     {
-      "id": "1",
-      "title": "Senior Vue Developer",
-      "type": "Full-Time",
-      "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as Vue or Angular.",
-      "location": "Boston, MA",
-      "salary": "$70K - $80K",
-      "company": {
-        "name": "NewTek Solutions",
-        "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
-        "contactEmail": "contact@teksolutions.com",
-        "contactPhone": "555-555-5555"
-      }
-    },
-    {
       "id": "2",
       "title": "Front-End Engineer (Vue)",
       "type": "Full-Time",
@@ -110,34 +96,6 @@
         "description": "Eiusmod ab ut dolore",
         "contactEmail": "dybe@mailinator.com",
         "contactPhone": "+1 (351) 912-1123"
-      }
-    },
-    {
-      "id": "f0d2",
-      "name": "Xyla Alford",
-      "description": "Qui sit quis earum p",
-      "location": "Qui dolores laboris ",
-      "salary": "$100K - $125K",
-      "type": "Part-Time",
-      "company": {
-        "name": "Sharp Mckenzie Plc",
-        "description": "Nesciunt qui explic",
-        "contactEmail": "xoryte@mailinator.com",
-        "contactPhone": "+1 (963) 694-1498"
-      }
-    },
-    {
-      "id": "bb61",
-      "name": "Portia Bean",
-      "description": "Aliquid dolorem volu",
-      "location": "Vero expedita provid",
-      "salary": "$125K - $150K",
-      "type": "Full-Time",
-      "company": {
-        "name": "Mitchell and Houston Co",
-        "description": "Dolorem et qui maxim",
-        "contactEmail": "dajyfibyhy@mailinator.com",
-        "contactPhone": "+1 (676) 577-2816"
       }
     }
   ]

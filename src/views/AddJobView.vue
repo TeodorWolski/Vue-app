@@ -28,6 +28,7 @@ const handleSubmit = async () => {
     toast.success('Job added successfully')
   } catch (error) {
     console.error('Error adding job:', error)
+    toast.error('Error adding job')
   }
 }
 </script>
